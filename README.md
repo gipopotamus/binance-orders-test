@@ -13,8 +13,10 @@ git clone https://github.com/your-username/binance-trading-script.git
 
 2. Перейдите в директорию проекта:
 
+
 ```shell
 cd binance-trading-script
+
 
 3. Установите зависимости:
 
