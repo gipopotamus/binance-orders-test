@@ -2,12 +2,14 @@ Binance Trading Script
 
 Этот скрипт использует API Binance для создания ордеров на бирже Binance на основе заданных параметров.
 
-## Установка
+Установка
 
 1. Склонируйте репозиторий:
 
+
 ```shell
 git clone https://github.com/your-username/binance-trading-script.git
+
 
 2. Перейдите в директорию проекта:
 
