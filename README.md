@@ -16,13 +16,13 @@ git clone https://github.com/your-username/binance-trading-script.git
 
 ```shell
 cd binance-trading-script
-
+```
 
 3. Установите зависимости:
 
-```shell
+```python
 pip install -r requirements.txt
-
+```
 ## Настройка
 
 1. Внесите необходимые изменения в файл `main.py`. Укажите свои данные для доступа к API Binance, например:
@@ -31,10 +31,11 @@ pip install -r requirements.txt
 API_KEY = 'your-api-key'
 API_SECRET = 'your-api-secret'
 symbol = ''
-
+```
 Запустите скрипт с помощью следующей команды:
 
-
+```python
 python main.py
+```
 Примечания
 Убедитесь, что у вас есть аккаунт на бирже Binance и включена торговля по API.
