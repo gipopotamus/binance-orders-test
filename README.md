@@ -1,4 +1,4 @@
-# Binance Trading Script
+Binance Trading Script
 
 Этот скрипт использует API Binance для создания ордеров на бирже Binance на основе заданных параметров.
 
