@@ -1,4 +1,7 @@
 from binance.client import Client
-from config import API_KEY, API_SECRET
+import configparser
 
-client = Client(API_KEY, API_SECRET)
+config = configparser.ConfigParser()
+config.read("config.ini")
+client = Client(config['Binance']['API_KEY'], config['Binance']['API_SECRET'])
+Symbol = config['Binance']['SYMBOL']

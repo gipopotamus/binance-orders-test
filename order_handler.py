@@ -1,11 +1,10 @@
 import random
-from binance_client import client
-from config import SYMBOL
+from binance_client import client, Symbol
 
 
 def get_current_price():
     try:
-        ticker = client.get_ticker(symbol=SYMBOL)
+        ticker = client.get_ticker(symbol=Symbol)
         current_price = float(ticker['lastPrice'])
         return current_price
     except Exception as e:
@@ -38,7 +37,7 @@ def create_order(order_data, current_price):
     account_info = client.get_account()
     available_balance = next((float(balance['free']) for balance in account_info['balances']
                               if (balance['asset'] == 'USDT' and side == 'BUY')
-                              or (balance['asset'] == SYMBOL and side == 'SELL')), 0.0)
+                              or (balance['asset'] == Symbol and side == 'SELL')), 0.0)
     if available_balance < volume:
         raise Exception('Недостаточно средств')
 
@@ -54,7 +53,7 @@ def create_order(order_data, current_price):
         try:
             # Создание ордера
             order = client.create_order(
-                symbol=SYMBOL,
+                symbol=Symbol,
                 side=side,
                 type='LIMIT',
                 timeInForce='GTC',
@@ -69,7 +68,7 @@ def create_order(order_data, current_price):
 
 def create_orders(data):
     try:
-        symbol = SYMBOL
+        symbol = Symbol
         orders_data = data.get('orders')
 
         if not symbol or not orders_data:
